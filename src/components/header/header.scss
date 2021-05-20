@@ -1,0 +1,22 @@
+.header {
+    background-color: #F5F5F9;
+    min-height: 84px;
+    display: flex;
+    align-items: center
+};
+
+.header__content {
+    min-width: 1024px;
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+};
+
+.header__navigation {
+    margin-left: auto;
+    a {
+        margin-left: 68px;
+        color: #48494D;
+    }
+}

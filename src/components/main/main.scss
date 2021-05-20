@@ -1,0 +1,158 @@
+.main {
+    padding-top: 74px;
+    margin-bottom: 140px;
+}
+
+.main__content {
+    min-width: 1024px;
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.main__slider {
+    width: 550px;
+    height: 510px;
+    border: 1px solid red;
+}
+
+.main__description {
+  width: 550px;
+
+  h1 {
+    margin-bottom: 40px;
+  }
+}
+
+.main__advantages-list {
+  display: flex;
+
+  .main__advantages-list-item {
+    position: relative;
+    margin-right: 40px;
+  }
+
+  .main__advantages-list-item::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+  }
+
+  .main__advantages-list-item--gasoline::before {
+    background-image: url('../main/gasoline.svg');
+    top: -34px;
+  }
+
+  .main__advantages-list-item--manual-transmission::before {
+    background-image: url('../main/manual_transmission.svg');
+    top: -34px;
+    left: 20px;
+  }
+
+  .main__advantages-list-item--horsepower::before {
+    background-image: url('../main/horsepower.svg');
+    top: -34px;
+    left: 9px;
+  }
+
+  .main__advantages-list-item--engine-volume::before {
+    background-image: url('../main/engine_volume.svg');
+    top: -34px;
+  }
+}
+
+.main__prices {
+  display: flex;
+  align-items: baseline;
+  margin-top: 37px;
+
+  .main__old-price {
+    color: #A3A4A6;
+    position: relative;
+    margin-left: 30px;
+  }
+
+  .main__old-price::before {
+    border-bottom: 3px solid #A3A4A6;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 50%;
+    transform: rotate(-7deg);
+  }
+}
+
+.main__buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 37px;
+
+  button {
+    height: 52px;
+    cursor: pointer;
+    margin-bottom: 16px;
+  }
+
+  .main__request-button {
+    color: #FFFFFF;
+    background-color: #D12136;
+    width: 196px;
+    border: none;
+  }
+
+  .main__credit-button {
+    color: #D12136;
+    background-color: #FFFFFF;
+    border: 1px solid #D12136;
+    width: 222px;
+  }
+}
+
+.main__tabs {
+  width: 550px;
+  margin-top: 90px;
+}
+
+.main__tabs-list {
+  display: flex;
+}
+
+.main__tabs-list-item {
+  width: 33.3%;
+
+  button {
+    height: 50px;
+    cursor: pointer;
+    width: 100%;
+    color: #48494D;
+    background-color: transparent;
+    border: 1px solid #D7D9DF;
+  }
+}
+
+.main__tabs-list-item--active {
+
+  button {
+    color: #FFFFFF;
+    background-color: #D12136;
+  }
+}
+
+.main__characteristics-list-item {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 20px;
+}
+
+.main__characteristics-list-item:before {
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 100%;
+  background-color: #D7D9DF;
+  bottom: 0;
+}

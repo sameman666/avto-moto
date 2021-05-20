@@ -5,11 +5,11 @@
   font-family: "Roboto", "Tahoma", sans-serif;
 };
 
-// *,
-// *::before,
-// *::after {
-//   box-sizing: border-box;
-// }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 ul[class],
 ol[class] {
@@ -55,4 +55,8 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+a {
+  text-decoration: none;
 }
