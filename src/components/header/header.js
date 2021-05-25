@@ -3,10 +3,10 @@ import './header.scss';
 
 const Header = () => {
   return (
-    <header className="header">
+    <header>
       <div className="header__content">
-        <img src={logo} alt="Avto Moto" width="134" height="55"/>
-        <nav className="header__navigation">
+        <a><img src={logo} alt="Avto Moto" width="134" height="55"/></a>
+        <nav>
           <a href="#">Автомобили</a>
           <a href="#">Контакты</a>
           <a href="#">Услуги</a>

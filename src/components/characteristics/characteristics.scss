@@ -1,0 +1,26 @@
+.main__characteristics-list {
+  width: 588px;
+  margin-top: 30px;
+  font-size: 16px;
+  padding-left: 24px;
+}
+
+.main__characteristics-list-item {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 26px;
+
+  p:last-child {
+    color: #000000;
+  }
+}
+
+.main__characteristics-list-item:before {
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 100%;
+  background-color: #D7D9DF;
+  bottom: -7px;
+}

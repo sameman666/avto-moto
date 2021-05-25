@@ -7,7 +7,7 @@ const Footer = () => {
         <nav className="footer__navigation">
           <a href="#">Корпоративным клиентам</a>
           <a href="#">Клиентам</a>
-          <a href="#">Аренда</a>
+          <a href="#">Аренда авто</a>
           <a href="#">Каршеринг</a>
           <a href="#">Как продать авто</a>
           <a href="#">Trade-in</a>
