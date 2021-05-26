@@ -93,12 +93,12 @@
 .main__reviews-list-star {
   width: 17px;
   height: 17px;
-  background-image: url('../main/star_gray.svg');
+  background-image: url("../main/star_gray.svg");
   background-repeat: no-repeat;
   margin-right: 4px;
 
   &--red {
-    background-image: url('../main/star_red.svg');
+    background-image: url("../main/star_red.svg");
   }
 }
 

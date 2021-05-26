@@ -5,7 +5,8 @@ import './popup.scss';
 const Popup = (props) => {
 
   const {state, onKeyDownHandler, onCloseReviewsFormHandler, onFormSubmitHandler, pluses, minuses, name, comment, onRatingHandler} = props;
-
+  // eslint-disable-next-line no-console
+  console.log(pluses);
   return (
     <div onKeyDown={onKeyDownHandler} tabIndex={0} onClick={onCloseReviewsFormHandler} className="main__popup-overlay">
       <div className="main__popup">
@@ -57,10 +58,18 @@ Popup.propTypes = {
   onKeyDownHandler: PropTypes.func,
   onCloseReviewsFormHandler: PropTypes.func,
   onFormSubmitHandler: PropTypes.func,
-  pluses: PropTypes.object,
-  minuses: PropTypes.object,
-  name: PropTypes.object,
-  comment: PropTypes.object,
+  pluses: PropTypes.shape({
+    current: PropTypes.object
+  }),
+  minuses: PropTypes.shape({
+    current: PropTypes.object
+  }),
+  name: PropTypes.shape({
+    current: PropTypes.object
+  }),
+  comment: PropTypes.shape({
+    current: PropTypes.object
+  }),
   onRatingHandler: PropTypes.func,
 };
 

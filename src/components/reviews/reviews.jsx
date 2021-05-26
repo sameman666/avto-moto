@@ -47,8 +47,6 @@ const Reviews = (props) => {
   );
 };
 
-export default Reviews;
-
 Reviews.propTypes = {
   reviews: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
@@ -59,3 +57,5 @@ Reviews.propTypes = {
   })),
   onOpenReviewsFormHandler: PropTypes.func,
 };
+
+export default Reviews;

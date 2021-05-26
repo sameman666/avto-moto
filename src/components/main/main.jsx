@@ -26,31 +26,32 @@ import 'swiper/components/scrollbar/scrollbar.scss';
 // install Swiper modules
 SwiperCore.use([Navigation]);
 
-const Main = () => {
+const DEFAULT_RATING = 3;
+const ESCAPE_KEYCODE = 27;
+const MOCK_REVIEWS = [
+  {
+    name: `Борис Иванов`,
+    pluses: `Мощность, внешний вид`,
+    minuses: `Слабые тормозные колодки (пришлось заменить)`,
+    rating: 3,
+    comment: `Взяли по трейд-ин, на выгодных условиях у дилера. Стильная внешка и крут по базовым характеристикам. Не думал, что пересяду на китайский автопром, но сейчас гоняю и понимаю, что полностью доволен.`
+  },
+  {
+    name: `Марсель Исмагилов`,
+    pluses: `Cтиль, комфорт, управляемость`,
+    minuses: `Дорогой ремонт и обслуживание`,
+    rating: 3,
+    comment: `Дизайн отличный, управление просто шикарно, ощущения за рулём такой машины особые. Но ремонт очень дорогой. Пару месяцев назад пришлось менять двигатель. По стоимости вышло как новый автомобиль. Так что, если покупать эту машину, надо быть готовым к большим расходам на обслуживание.`
+  }
+];
+const Tab = {
+  CHARACTERISTICS: `Характеристики`,
+  REVIEWS: `Отзывы`,
+  CONTACTS: `Контакты`
+};
 
-  const DEFAULT_RATING = 3;
-  const ESCAPE_KEYCODE = 27;
-  const MOCK_REVIEWS = [
-    {
-      name: `Борис Иванов`,
-      pluses: `Мощность, внешний вид`,
-      minuses: `Слабые тормозные колодки (пришлось заменить)`,
-      rating: 3,
-      comment: `Взяли по трейд-ин, на выгодных условиях у дилера. Стильная внешка и крут по базовым характеристикам. Не думал, что пересяду на китайский автопром, но сейчас гоняю и понимаю, что полностью доволен.`
-    },
-    {
-      name: `Марсель Исмагилов`,
-      pluses: `Cтиль, комфорт, управляемость`,
-      minuses: `Дорогой ремонт и обслуживание`,
-      rating: 3,
-      comment: `Дизайн отличный, управление просто шикарно, ощущения за рулём такой машины особые. Но ремонт очень дорогой. Пару месяцев назад пришлось менять двигатель. По стоимости вышло как новый автомобиль. Так что, если покупать эту машину, надо быть готовым к большим расходам на обслуживание.`
-    }
-  ];
-  const Tabs = {
-    CHARACTERISTICS: `Характеристики`,
-    REVIEWS: `Отзывы`,
-    CONTACTS: `Контакты`
-  };
+
+const Main = () => {
 
   const initialState = {
     reviews: MOCK_REVIEWS,
@@ -73,7 +74,7 @@ const Main = () => {
   const tabsHandler = (evt) => {
     const tab = evt.target.textContent;
     switch (tab) {
-      case Tabs.CHARACTERISTICS:
+      case Tab.CHARACTERISTICS: {
         setState({
           ...state,
           isCharacteristicsTabOpen: true,
@@ -81,7 +82,8 @@ const Main = () => {
           isContactsTabOpen: false,
         });
         break;
-      case Tabs.REVIEWS:
+      }
+      case Tab.REVIEWS: {
         setState({
           ...state,
           isCharacteristicsTabOpen: false,
@@ -89,7 +91,8 @@ const Main = () => {
           isContactsTabOpen: false,
         });
         break;
-      case Tabs.CONTACTS:
+      }
+      case Tab.CONTACTS: {
         setState({
           ...state,
           isCharacteristicsTabOpen: false,
@@ -97,6 +100,7 @@ const Main = () => {
           isContactsTabOpen: true,
         });
         break;
+      }
     }
   };
 
@@ -150,6 +154,10 @@ const Main = () => {
       isValidName: true,
       isValidComment: true
     });
+    localStorage.setItem(`name`, name.current.value);
+    localStorage.setItem(`pluses`, pluses.current.value);
+    localStorage.setItem(`minuses`, minuses.current.value);
+    localStorage.setItem(`comment`, comment.current.value);
     document.body.classList.remove(`popup-opened`);
   };
 
@@ -160,8 +168,8 @@ const Main = () => {
     });
   };
 
-  const onKeyDownHandler = (e) => {
-    if (e.keyCode === ESCAPE_KEYCODE) {
+  const keyDownHandler = (evt) => {
+    if (evt.keyCode === ESCAPE_KEYCODE) {
       setState({
         ...state,
         isReviewFormOpen: false,
@@ -247,7 +255,7 @@ const Main = () => {
       {state.isReviewFormOpen &&
         <Popup
           state={state}
-          onKeyDownHandler={onKeyDownHandler}
+          onKeyDownHandler={keyDownHandler}
           onCloseReviewsFormHandler={closeReviewsFormHandler}
           onFormSubmitHandler={formSubmitHandler}
           pluses={pluses}

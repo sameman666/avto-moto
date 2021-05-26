@@ -22,7 +22,7 @@
 }
 
 .main__slider-wrapper::before {
-  content: 'New Model';
+  content: "New Model";
   text-transform: uppercase;
   color: #FFFFFF;
   text-align: center;
@@ -72,19 +72,19 @@
 }
 
 .main__slider-arrow--left {
-  background-image: url('../main/arrow_left.svg');
+  background-image: url("../main/arrow_left.svg");
 }
 
 .main__slider-arrow--left:disabled {
-  background-image: url('../main/arrow_left_disabled.svg');
+  background-image: url("../main/arrow_left_disabled.svg");
 }
 
 .main__slider-arrow--right {
-  background-image: url('../main/arrow_right.svg');
+  background-image: url("../main/arrow_right.svg");
 }
 
 .main__slider-arrow--right:disabled {
-  background-image: url('../main/arrow_right_disabled.svg');
+  background-image: url("../main/arrow_right_disabled.svg");
 }
 
 .main__description {
@@ -120,18 +120,18 @@
   }
 
   .main__advantages-list-item--gasoline::before {
-    background-image: url('../main/gasoline.svg');
+    background-image: url("../main/gasoline.svg");
     top: -40px;
   }
 
   .main__advantages-list-item--manual-transmission::before {
-    background-image: url('../main/manual_transmission.svg');
+    background-image: url("../main/manual_transmission.svg");
     top: -40px;
     left: 16px;
   }
 
   .main__advantages-list-item--horsepower::before {
-    background-image: url('../main/horsepower.svg');
+    background-image: url("../main/horsepower.svg");
     top: -40px;
     left: 7px;
   }
@@ -141,7 +141,7 @@
   }
 
   .main__advantages-list-item--engine-volume::before {
-    background-image: url('../main/engine_volume.svg');
+    background-image: url("../main/engine_volume.svg");
     top: -40px;
     left: -1px;
   }

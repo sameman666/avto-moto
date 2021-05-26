@@ -3,7 +3,7 @@ import './header.scss';
 
 const Header = () => {
   return (
-    <header>
+    <header className="header">
       <div className="header__content">
         <a><img src={logo} alt="Avto Moto" width="134" height="55"/></a>
         <nav>
