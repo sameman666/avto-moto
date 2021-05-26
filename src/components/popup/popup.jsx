@@ -1,12 +1,42 @@
 import ReactStars from "react-rating-stars-component";
 import PropTypes from 'prop-types';
 import './popup.scss';
+import {useState} from 'react';
 
 const Popup = (props) => {
 
   const {state, onKeyDownHandler, onCloseReviewsFormHandler, onFormSubmitHandler, pluses, minuses, name, comment, onRatingHandler} = props;
-  // eslint-disable-next-line no-console
-  console.log(pluses);
+
+  const initialLocalStorage = {
+    name: localStorage.getItem(`name`) ? localStorage.getItem(`name`) : ``,
+    pluses: localStorage.getItem(`pluses`) ? localStorage.getItem(`pluses`) : ``,
+    minuses: localStorage.getItem(`minuses`) ? localStorage.getItem(`minuses`) : ``,
+    comment: localStorage.getItem(`comment`) ? localStorage.getItem(`comment`) : ``,
+  };
+
+  const [localStorageValues] = useState(initialLocalStorage);
+
+  const setLocalStorageItems = (evt) => {
+    switch (evt.target.name) {
+      case `name`: {
+        localStorage.setItem(`name`, evt.target.value);
+        break;
+      }
+      case `pluses`: {
+        localStorage.setItem(`pluses`, evt.target.value);
+        break;
+      }
+      case `minuses`: {
+        localStorage.setItem(`minuses`, evt.target.value);
+        break;
+      }
+      case `comment`: {
+        localStorage.setItem(`comment`, evt.target.value);
+        break;
+      }
+    }
+  };
+
   return (
     <div onKeyDown={onKeyDownHandler} tabIndex={0} onClick={onCloseReviewsFormHandler} className="main__popup-overlay">
       <div className="main__popup">
@@ -18,11 +48,11 @@ const Popup = (props) => {
           <div className="main__popup-data">
             <div className="main__popup-data-block">
               {state.isValidName === false && <p className="main__popup-data-required-field">Пожалуйста, заполните это поле</p>}
-              <input className={state.isValidName ? `` : `main__popup-input-error`} type="text" name="name" id="name" placeholder="Имя" ref={name} autoFocus={true}/>
+              <input onChange={setLocalStorageItems} defaultValue={localStorageValues.name} className={state.isValidName ? `` : `main__popup-input-error`} type="text" name="name" id="name" placeholder="Имя" ref={name} autoFocus={true}/>
               <label htmlFor="name"></label>
-              <input type="text" name="pluses" id="pluses" placeholder="Достоинства" ref={pluses} />
+              <input onChange={setLocalStorageItems} defaultValue={localStorageValues.pluses} type="text" name="pluses" id="pluses" placeholder="Достоинства" ref={pluses} />
               <label htmlFor="pluses"></label>
-              <input type="text" name="minuses" id="minuses" placeholder="Недостатки" ref={minuses}/>
+              <input onChange={setLocalStorageItems} defaultValue={localStorageValues.minuses} type="text" name="minuses" id="minuses" placeholder="Недостатки" ref={minuses}/>
               <label htmlFor="minuses"></label>
             </div>
             <div className="main__popup-data-block">
@@ -42,7 +72,7 @@ const Popup = (props) => {
                 </div>
               </div>
               {state.isValidComment === false && <p className="main__popup-data-required-field">Пожалуйста, заполните это поле</p>}
-              <textarea className={state.isValidComment ? `` : `main__popup-input-error`} name="comment" id="comment" placeholder="Комментарий" ref={comment}></textarea>
+              <textarea onChange={setLocalStorageItems} defaultValue={localStorageValues.comment} className={state.isValidComment ? `` : `main__popup-input-error`} name="comment" id="comment" placeholder="Комментарий" ref={comment}></textarea>
               <label htmlFor="comment" title="Комментарий"></label>
             </div>
           </div>

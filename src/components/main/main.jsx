@@ -1,5 +1,4 @@
-/* eslint-disable no-console */
-import {useState, useRef} from 'react';
+import {useState, useRef, useEffect} from 'react';
 import './main.scss';
 import slide1 from './slide_1.jpg';
 import slide1Min from './slide_1_min.jpg';
@@ -61,7 +60,7 @@ const Main = () => {
     isContactsTabOpen: false,
     rating: DEFAULT_RATING,
     isValidName: true,
-    isValidComment: true
+    isValidComment: true,
   };
 
   const [state, setState] = useState(initialState);
@@ -70,6 +69,15 @@ const Main = () => {
   const pluses = useRef();
   const minuses = useRef();
   const comment = useRef();
+
+  useEffect(() => {
+    setState({
+      ...state,
+      localStorage: {
+        name: localStorage.getItem(`name`),
+      }
+    });
+  }, []);
 
   const tabsHandler = (evt) => {
     const tab = evt.target.textContent;
@@ -154,10 +162,11 @@ const Main = () => {
       isValidName: true,
       isValidComment: true
     });
-    localStorage.setItem(`name`, name.current.value);
-    localStorage.setItem(`pluses`, pluses.current.value);
-    localStorage.setItem(`minuses`, minuses.current.value);
-    localStorage.setItem(`comment`, comment.current.value);
+    // localStorage.setItem(`name`, name.current.value);
+    // localStorage.setItem(`pluses`, pluses.current.value);
+    // localStorage.setItem(`minuses`, minuses.current.value);
+    // localStorage.setItem(`comment`, comment.current.value);
+    localStorage.clear();
     document.body.classList.remove(`popup-opened`);
   };
 
