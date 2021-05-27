@@ -25,7 +25,7 @@ import 'swiper/components/scrollbar/scrollbar.scss';
 // install Swiper modules
 SwiperCore.use([Navigation]);
 
-const DEFAULT_RATING = 3;
+const DEFAULT_RATING = 0;
 const ESCAPE_KEYCODE = 27;
 const MOCK_REVIEWS = [
   {
@@ -200,7 +200,7 @@ const Main = () => {
             <button className="main__slider-arrow main__slider-arrow--left" type="button" aria-label="Листать влево"></button>
             <div className="main__slider-controls-thumbs">
               <Swiper
-                spaceBetween={25}
+                spaceBetween={35}
                 slidesPerView={3}
                 draggable={false}
                 allowTouchMove={false}

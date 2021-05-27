@@ -4,13 +4,17 @@
   display: flex;
   align-items: center;
 
-  a {
-    margin-left: 68px;
-    color: #48494D
+  a:last-child {
+    margin-right: 0;
   }
 
-  a:first-of-type {
+  img {
     margin-left: 16px;
+    margin-right: 20px;
+  }
+
+  nav {
+    padding-top: 20px
   }
 };
 
@@ -19,12 +23,20 @@ nav {
   flex-wrap: wrap;
   font-weight: 600;
   margin-left: auto;
+
+  a {
+    margin-right: 68px;
+    color: #48494D;
+    margin-bottom: 20px;
+  }
 }
 
 .header__content {
     min-width: 1024px;
-    width: 1184px;
+    width: 100%;
+    max-width: 1184px;
     margin: 0 auto;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 };
