@@ -5,7 +5,7 @@
 }
 
 .main__content {
-    min-width: 1024px;
+    min-width: 1007px;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -48,7 +48,8 @@
 .main__slider-controls-thumbs {
   min-width: 0;
   margin-top: 21px;
-  margin-left: 25px;
+  width: 440px;
+  margin-left: 5px;
 }
 
 .main__slider-arrow {
@@ -92,9 +93,9 @@
 }
 
 .main__description {
-  padding-left: 21px;
-  margin-right: auto;
-  margin-left: 35px;
+  min-width: 338px;
+  // padding-left: 21px;
+  // margin-right: auto;
 
   h1 {
     margin-bottom: 56px;
@@ -259,4 +260,11 @@
     color: #FFFFFF;
     background-color: #D12136;
   }
+}
+
+.main__main-wrapper {
+  display: flex;
+  max-width: 1009px;
+  justify-content: space-between;
+  width: 100%;
 }

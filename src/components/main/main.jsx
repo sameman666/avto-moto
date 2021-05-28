@@ -177,64 +177,66 @@ const Main = () => {
   return (
     <main className="main">
       <div className="main__content">
-        <section className="main__slider">
-          <Swiper
-            spaceBetween={0}
-            slidesPerView={1}
-            navigation={{
-              nextEl: `.main__slider-arrow--right`,
-              prevEl: `.main__slider-arrow--left`
-            }}
-          >
-            <SwiperSlide>
-              <img src={slide1} alt="Слайд 1" width="600" height="375" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src={slide2} alt="Слайд 2" width="600" height="375" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src={slide3} alt="Слайд 3" width="600" height="375" />
-            </SwiperSlide>
-          </Swiper>
-          <div className="main__slider-cotrols">
-            <button className="main__slider-arrow main__slider-arrow--left" type="button" aria-label="Листать влево"></button>
-            <div className="main__slider-controls-thumbs">
-              <Swiper
-                spaceBetween={35}
-                slidesPerView={3}
-                draggable={false}
-                allowTouchMove={false}
-              >
-                <SwiperSlide>
-                  <img src={slide1Min} alt="Слайд 1" width="128" height="80" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src={slide2Min} alt="Слайд 2" width="128" height="80" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src={slide3Min} alt="Слайд 3" width="128" height="80" />
-                </SwiperSlide>
-              </Swiper>
+        <section className="main__main-wrapper">
+          <section className="main__slider">
+            <Swiper
+              spaceBetween={0}
+              slidesPerView={1}
+              navigation={{
+                nextEl: `.main__slider-arrow--right`,
+                prevEl: `.main__slider-arrow--left`
+              }}
+            >
+              <SwiperSlide>
+                <img src={slide1} alt="Слайд 1" width="600" height="375" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={slide2} alt="Слайд 2" width="600" height="375" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={slide3} alt="Слайд 3" width="600" height="375" />
+              </SwiperSlide>
+            </Swiper>
+            <div className="main__slider-cotrols">
+              <button className="main__slider-arrow main__slider-arrow--left" type="button" aria-label="Листать влево"></button>
+              <div className="main__slider-controls-thumbs">
+                <Swiper
+                  spaceBetween={23}
+                  slidesPerView={3}
+                  draggable={false}
+                  allowTouchMove={false}
+                >
+                  <SwiperSlide>
+                    <img src={slide1Min} alt="Слайд 1" width="128" height="80" />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={slide2Min} alt="Слайд 2" width="128" height="80" />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={slide3Min} alt="Слайд 3" width="128" height="80" />
+                  </SwiperSlide>
+                </Swiper>
+              </div>
+              <button className="main__slider-arrow main__slider-arrow--right" type="button" aria-label="Листать вправо"></button>
             </div>
-            <button className="main__slider-arrow main__slider-arrow--right" type="button" aria-label="Листать вправо"></button>
-          </div>
-        </section>
-        <section className="main__description">
-          <h1>Марпех 11</h1>
-          <ul className="main__advantages-list">
-            <li className="main__advantages-list-item main__advantages-list-item--gasoline">бензин</li>
-            <li className="main__advantages-list-item main__advantages-list-item--manual-transmission">механика</li>
-            <li className="main__advantages-list-item main__advantages-list-item--horsepower">100 л.с</li>
-            <li className="main__advantages-list-item main__advantages-list-item--engine-volume">1.4 л</li>
-          </ul>
-          <div className="main__prices">
-            <h2 className="main__current-price">2 300 000 ₽</h2>
-            <span className="main__old-price">2 400 000 ₽</span>
-          </div>
-          <div className="main__buttons">
-            <button className="main__request-button button-primary">Оставить заявку</button>
-            <button className="main__credit-button button-frame">В кредит от 11 000 ₽</button>
-          </div>
+          </section>
+          <section className="main__description">
+            <h1>Марпех 11</h1>
+            <ul className="main__advantages-list">
+              <li className="main__advantages-list-item main__advantages-list-item--gasoline">бензин</li>
+              <li className="main__advantages-list-item main__advantages-list-item--manual-transmission">механика</li>
+              <li className="main__advantages-list-item main__advantages-list-item--horsepower">100 л.с</li>
+              <li className="main__advantages-list-item main__advantages-list-item--engine-volume">1.4 л</li>
+            </ul>
+            <div className="main__prices">
+              <h2 className="main__current-price">2 300 000 ₽</h2>
+              <span className="main__old-price">2 400 000 ₽</span>
+            </div>
+            <div className="main__buttons">
+              <button className="main__request-button button-primary">Оставить заявку</button>
+              <button className="main__credit-button button-frame">В кредит от 11 000 ₽</button>
+            </div>
+          </section>
         </section>
         <section className="main__tabs">
           <ul className="main__tabs-list">
